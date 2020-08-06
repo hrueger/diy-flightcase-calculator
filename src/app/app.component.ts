@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    public twoPieces = false;
+    public twoPieces = true;
     public extras = [
         {
             name: '8 Kugel-Ecken',
