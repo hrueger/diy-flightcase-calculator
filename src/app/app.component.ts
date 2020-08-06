@@ -63,6 +63,13 @@ export class AppComponent {
             price: 1.46,
             count: 2,
             checked: false,
+        },
+        {
+            name: '4 Stapel-Einbauschalen',
+            link: 'https://www.thomann.de/de/adam_hall_38083_castor_dish.htm',
+            price: 1.85,
+            count: 4,
+            checked: false,
         }
     ];
     public woodPricePerM2 = 14.06;
