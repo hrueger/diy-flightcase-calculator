@@ -14,7 +14,7 @@ export class AppComponent {
             image: 'https://www.thomann.de/pics/bdb/149752/9325828_800.jpg',
             price: 1.07,
             count: 8,
-            checked: false,
+            checked: true,
         },
         {
             name: '8 L-Ecken für Deckelverschluss',
@@ -22,7 +22,7 @@ export class AppComponent {
             image: 'https://www.thomann.de/pics/bdb/412409/12111777_800.jpg',
             price: 0.39,
             count: 8,
-            checked: false,
+            checked: true,
         },
         {
             name: '4 Rollen (2x mit Bremse)',
@@ -46,7 +46,7 @@ export class AppComponent {
             image: 'https://www.thomann.de/pics/bdb/128099/11995793_800.jpg',
             price: 3.61,
             count: 2,
-            checked: false,
+            checked: true,
         },
         {
             name: '2 weitere Tragegriffe',
@@ -62,7 +62,7 @@ export class AppComponent {
             image: 'https://www.thomann.de/pics/bdb/182588/9343842_800.jpg',
             price: 5.40,
             count: 2,
-            checked: false,
+            checked: true,
         },
         {
             name: '2 Scharniere',
@@ -70,7 +70,7 @@ export class AppComponent {
             image: 'https://www.thomann.de/pics/bdb/120297/12265782_800.jpg',
             price: 1.46,
             count: 2,
-            checked: false,
+            checked: true,
         },
         {
             name: '4 Stapel-Einbauschalen',
@@ -91,9 +91,9 @@ export class AppComponent {
     public closeProfileLink = 'https://www.thomann.de/de/adam_hall_6103.htm';
     public closeProfileImage = 'https://www.thomann.de/pics/bdb/103574/9185493_800.jpg';
     public dimensions = {
-        length: 100,
-        width: 50,
-        height: 50,
+        length: 65.6,
+        width: 30.8,
+        height: 48.6,
     };
 
     public getWoodArea(): number {
