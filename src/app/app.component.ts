@@ -82,4 +82,14 @@ export class AppComponent {
             this.dimensions.height
         ) * 4 / 100;
     }
+
+    public getCheckedExtras(): any[] {
+        return this.extras.filter((e) => !!e.checked);
+    }
+
+    public getTotalPrice(): number {
+        return (this.woodPricePerM2 * this.getWoodArea()) +
+            (this.profilePricePerM * this.getProfileLength()) +
+            this.getCheckedExtras().map((e) => e.count * e.price).reduce((p, c) => p + c, 0);
+    }
 }

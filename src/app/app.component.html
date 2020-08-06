@@ -119,6 +119,16 @@
                             <td><a [href]="extra.link" target="_blank">Link</a></td>
                         </tr>
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><b>{{getTotalPrice() | currency:'EUR'}}</b></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>
