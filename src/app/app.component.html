@@ -113,7 +113,7 @@
                         <tr>
                             <td><img class="preview" [src]="woodImage"></td>
                             <td>Holz</td>
-                            <td>{{getWoodArea()}}</td>
+                            <td>{{getWoodArea() | number}}</td>
                             <td>m²</td>
                             <td>{{woodPricePerM2 | currency:'EUR'}}</td>
                             <td>{{woodPricePerM2 * getWoodArea() | currency:'EUR'}}</td>
@@ -122,7 +122,7 @@
                         <tr>
                             <td><img class="preview" [src]="profileImage"></td>
                             <td>Kantenprofil</td>
-                            <td>{{getProfileLength()}}</td>
+                            <td>{{getProfileLength() | number}}</td>
                             <td>m</td>
                             <td>{{profilePricePerM | currency:'EUR'}}</td>
                             <td>{{profilePricePerM * getProfileLength() | currency:'EUR'}}</td>
@@ -131,7 +131,7 @@
                         <tr *ngIf="twoPieces">
                             <td><img class="preview" [src]="closeProfileImage"></td>
                             <td>Schließprofil</td>
-                            <td>{{getCloseProfileLength()}}</td>
+                            <td>{{getCloseProfileLength() | number}}</td>
                             <td>m</td>
                             <td>{{closeProfilePricePerM | currency:'EUR'}}</td>
                             <td>{{closeProfilePricePerM * getCloseProfileLength() | currency:'EUR'}}</td>
