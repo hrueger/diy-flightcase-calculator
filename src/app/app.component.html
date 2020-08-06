@@ -73,7 +73,7 @@
                         <label class="col-4">Sonstiges:</label>
                         <div class="col-8">
                             <div class="custom-control custom-checkbox custom-control" *ngFor="let extra of extras">
-                                <input [id]="extra.name" type="checkbox" class="custom-control-input">
+                                <input [id]="extra.name" type="checkbox" [name]="extra.name" [(ngModel)]="extra.checked" class="custom-control-input">
                                 <label [for]="extra.name" class="custom-control-label">{{extra.name}} (<a [href]="extra.link" target="_blank">Ansehen</a>)</label>
                             </div>
                         </div>
@@ -109,6 +109,14 @@
                             <td>{{profilePricePerM | currency:'EUR'}}</td>
                             <td>{{profilePricePerM * getProfileLength() | currency:'EUR'}}</td>
                             <td><a [href]="profileLink" target="_blank">Link</a></td>
+                        </tr>
+                        <tr *ngFor="let extra of getCheckedExtras()">
+                            <td>{{extra.name}}</td>
+                            <td>{{extra.count}}</td>
+                            <td>Stück</td>
+                            <td>{{extra.price | currency:'EUR'}}</td>
+                            <td>{{extra.count * extra.price | currency:'EUR'}}</td>
+                            <td><a [href]="extra.link" target="_blank">Link</a></td>
                         </tr>
                     </tbody>
                 </table>
