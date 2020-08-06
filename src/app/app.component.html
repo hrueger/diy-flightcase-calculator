@@ -70,7 +70,16 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-4">Sonstiges:</label>
+                        <label class="col-4">Einstellungen:</label>
+                        <div class="col-8">
+                            <div class="custom-control custom-checkbox custom-control">
+                                <input id="twoPieces" type="checkbox" name="twoPieces" [(ngModel)]="twoPieces" class="custom-control-input">
+                                <label for="twoPieces" class="custom-control-label">Zweiteilig (Deckel und Kiste)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-4">Zusatzteile:</label>
                         <div class="col-8">
                             <div class="custom-control custom-checkbox custom-control" *ngFor="let extra of extras">
                                 <input [id]="extra.name" type="checkbox" [name]="extra.name" [(ngModel)]="extra.checked" class="custom-control-input">
@@ -109,6 +118,14 @@
                             <td>{{profilePricePerM | currency:'EUR'}}</td>
                             <td>{{profilePricePerM * getProfileLength() | currency:'EUR'}}</td>
                             <td><a [href]="profileLink" target="_blank">Link</a></td>
+                        </tr>
+                        <tr *ngIf="twoPieces">
+                            <td>Schließprofil</td>
+                            <td>{{getCloseProfileLength()}}</td>
+                            <td>m</td>
+                            <td>{{closeProfilePricePerM | currency:'EUR'}}</td>
+                            <td>{{closeProfilePricePerM * getCloseProfileLength() | currency:'EUR'}}</td>
+                            <td><a [href]="closeProfileLink" target="_blank">Link</a></td>
                         </tr>
                         <tr *ngFor="let extra of getCheckedExtras()">
                             <td>{{extra.name}}</td>

@@ -6,11 +6,19 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+    public twoPieces = false;
     public extras = [
         {
             name: '8 Kugel-Ecken',
             link: 'https://www.thomann.de/de/adam_hall_4107_kugelecke.htm',
             price: 1.07,
+            count: 8,
+            checked: false,
+        },
+        {
+            name: '8 L-Ecken für Deckelverschluss',
+            link: 'https://www.thomann.de/de/adam_hall_4044_l_corner_40_x_50.htm',
+            price: 0.39,
             count: 8,
             checked: false,
         },
@@ -61,6 +69,8 @@ export class AppComponent {
     public woodLink = 'https://www.hornbach.de/shop/Mulitplexplatte-Birke-BB-BB-1500x3000x9-mm/10284886/artikel.html';
     public profilePricePerM = 2.83;
     public profileLink = 'https://www.thomann.de/de/adam_hall_6105.htm';
+    public closeProfilePricePerM = 3.44;
+    public closeProfileLink = 'https://www.thomann.de/de/adam_hall_6103.htm';
     public dimensions = {
         length: 100,
         width: 50,
@@ -83,6 +93,13 @@ export class AppComponent {
         ) * 4 / 100;
     }
 
+    public getCloseProfileLength(): number {
+        return (
+            this.dimensions.width +
+            this.dimensions.length
+        ) * 4 / 100;
+    }
+
     public getCheckedExtras(): any[] {
         return this.extras.filter((e) => !!e.checked);
     }
@@ -90,6 +107,7 @@ export class AppComponent {
     public getTotalPrice(): number {
         return (this.woodPricePerM2 * this.getWoodArea()) +
             (this.profilePricePerM * this.getProfileLength()) +
+            (this.twoPieces ? this.closeProfilePricePerM * this.getCloseProfileLength() : 0) +
             this.getCheckedExtras().map((e) => e.count * e.price).reduce((p, c) => p + c, 0);
     }
 }
